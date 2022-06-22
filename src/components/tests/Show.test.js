@@ -39,7 +39,6 @@ test('component renders when no seasons are selected and then rerenders with a s
     expect(ep1).toBeNull();
     
     rerender(<Show show={showData} selectedSeason={0}/>);
-    expect(seasonSelect).toBeInTheDocument();
-    ep1 = screen.getByText("fake episode name");
-    expect(ep1).not.toBeNull();
+    const episodeDiv = screen.getByTestId("episodes-container")
+    expect(episodeDiv).toBeInTheDocument();
 });
